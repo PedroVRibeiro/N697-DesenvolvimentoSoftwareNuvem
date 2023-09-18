@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile App</title>
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+  <script type="text/javascript" type="text/javascript">
+    Parse.initialize("IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P", "OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl");
+    Parse.serverURL = 'https://parseapi.back4app.com/'
+  </script>
+  <script type="text/javascript" src="index.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .button {
+      width: 200px;
+      height: 50px;
+      margin: 10px;
+      text-align: center;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="button">Imóveis</button>
+  <button class="button">Corretores da Empresa</button>
+  <button class="button">Funcionários </button>
+  <button class="button">Dados Financeiros</button>
+  <button class="button">Folha de Pagamento (Funcionários)</button>
+  <button class="button">Bairros/Cidades/Regiões (Localizações)</button>
+</body>
+
+</html>
