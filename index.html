@@ -45,10 +45,20 @@
 <body>
   <button class="button">Imóveis</button>
   <button class="button">Corretores da Empresa</button>
-  <button class="button">Funcionários </button>
+  <button class="button" onclick="loadOtherHTML()">Funcionários </button>
   <button class="button">Dados Financeiros</button>
   <button class="button">Folha de Pagamento (Funcionários)</button>
   <button class="button">Bairros/Cidades/Regiões (Localizações)</button>
+  
+  <iframe id="iframe" style="display: none;"></iframe>
+
+  <script>
+    function loadOtherHTML() {
+      const iframe = document.getElementById("iframe");
+      iframe.src = "pages/funcionarios/funcionarios.html";
+      iframe.style.display = "block";
+    }
+  </script>
 </body>
 
 </html>
