@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="localizacoes.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Localidade</title>
+    <script src="localizacoes.js"></script>
+</head>
+<body>
+    
+  <h1 class="titulo">Adicionar Localidade</h1>
+
+    
+    <!-- Formulário para adicionar localidade -->
+    <form id="localidade-form">
+        <label for="nome">Nome da Localidade:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="tipo">Tipo de Localidade:</label>
+        <select id="tipo" name="tipo">
+            <option value="Cidade">Cidade</option>
+            <option value="Bairro">Bairro</option>
+            <option value="Região">Região</option>
+        </select>
+
+        <button type="submit">Adicionar Localidade</button>
+    </form>
+
+    <!-- Área para exibir mensagens de sucesso ou erro -->
+    <div id="mensagem"></div>
+
+<section>
+        <h2>Consulta de Localidade</h2>
+       
+
+        <!-- Botões e formulários para interações com as funções JavaScript -->
+        <button onclick="consultarLocalidadesPorTipo('Cidade')">Consultar Cidades</button>
+        <button onclick="consultarLocalidadesPorTipo('Bairro')">Consultar Bairros</button>
+        <button onclick="consultarLocalidadesPorTipo('Região')">Consultar Regiões</button>
+
+     <h2>Atualizar Localidade</h2>
+<form onsubmit="event.preventDefault(); atualizarNomeLocalidadePorNome(this.nome.value, this.novoNome.value)">
+    <input type="text" name="nome" placeholder="Nome da Localidade">
+    <input type="text" name="novoNome" placeholder="Novo Nome">
+    <button type="submit">Atualizar Nome da Localidade</button>
+</form>
+
+
+        <input type="text" id="idLocalidadeExclusao" placeholder="ID da Localidade">
+        <button onclick="excluirLocalidadePorID(document.getElementById('idLocalidadeExclusao').value)">Excluir Localidade</button>
+    </section>
+
+  
+    <script>
+        // Função para adicionar uma localidade ao Back4App
+        function adicionarLocalidade(tipo, nome) {
+            const Localidade = Parse.Object.extend("Localidade"); // Usar o nome correto da classe
+            const localidade = new Localidade(); // Usar o nome correto da classe
+            localidade.set("Tipo", tipo);
+            localidade.set("Nome", nome);
+
+            localidade.save().then(function(localidade) {
+                document.getElementById("mensagem").innerHTML = `Localidade "${nome}" adicionada com sucesso com ID: ${localidade.id}`;
+            }).catch(function(error) {
+                document.getElementById("mensagem").innerHTML = `Erro ao adicionar localidade: ${error.message}`;
+            });
+        }
+
+        // Manipulador de envio do formulário
+        document.getElementById("localidade-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Obtém valores do formulário
+            const tipo = document.getElementById("tipo").value;
+            const nome = document.getElementById("nome").value;
+
+            // Chama a função para adicionar a localidade
+            adicionarLocalidade(tipo, nome);
+
+            // Limpa os campos do formulário
+            document.getElementById("nome").value = "";
+        });
+    </script>
+  
+</body>
+</html>
