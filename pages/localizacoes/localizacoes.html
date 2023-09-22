@@ -31,14 +31,26 @@
     <div id="mensagem"></div>
 
 <section>
-        <h2>Consulta de Localidade</h2>
-       
+         <h2>Consulta de Localidades</h2>
 
-        <!-- Botões e formulários para interações com as funções JavaScript -->
-        <button onclick="consultarLocalidadesPorTipo('Cidade')">Consultar Cidades</button>
-        <button onclick="consultarLocalidadesPorTipo('Bairro')">Consultar Bairros</button>
-        <button onclick="consultarLocalidadesPorTipo('Região')">Consultar Regiões</button>
+    <!-- Consulta de Cidades -->
+    <label for="cidade">Consulta por Cidade:</label>
+    <input type="text" id="cidade" placeholder="Nome da Cidade">
+    <button onclick="consultarCidade()">Consultar</button>
+    <div id="resultadoCidade"></div>
 
+    <!-- Consulta de Bairros -->
+    <label for="bairro">Consulta por Bairro:</label>
+    <input type="text" id="bairro" placeholder="Nome do Bairro">
+    <button onclick="consultarBairro()">Consultar</button>
+    <div id="resultadoBairro"></div>
+
+    <!-- Consulta de Regiões -->
+    <label for="regiao">Consulta por Região:</label>
+    <input type="text" id="regiao" placeholder="Nome da Região">
+    <button onclick="consultarRegiao()">Consultar</button>
+    <div id="resultadoRegiao"></div>
+  
      <h2>Atualizar Localidade</h2>
 <form onsubmit="event.preventDefault(); atualizarNomeLocalidadePorNome(this.nome.value, this.novoNome.value)">
     <input type="text" name="nome" placeholder="Nome da Localidade">
@@ -46,6 +58,7 @@
     <button type="submit">Atualizar Nome da Localidade</button>
 </form>
 
+   <h2>Excluir Localidade</h2>
 
         <input type="text" id="idLocalidadeExclusao" placeholder="ID da Localidade">
         <button onclick="excluirLocalidadePorID(document.getElementById('idLocalidadeExclusao').value)">Excluir Localidade</button>
