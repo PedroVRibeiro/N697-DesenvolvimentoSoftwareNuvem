@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Funcionarios CRUD</title>
+		<script
+			type="text/javascript"
+			src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+		<script
+			type="text/javascript"
+			type="text/javascript">
+			Parse.initialize(
+				"IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P",
+				"OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl"
+			);
+			Parse.serverURL = "https://parseapi.back4app.com/";
+		</script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Funcionarios CRUD</title>
-  <link rel="stylesheet" href="funcionarios.css">
-</head>
+		<link
+			rel="stylesheet"
+			href="funcionarios.css" />
+	</head>
 
-<body>
-  <div class="container">
-    <h1>Funcionarios</h1>
-    <div class="funcionarios-list">
-      <!-- Example funcionario card (replace with dynamic content) -->
-      <div class="funcionario-card">
-        <h2>Nome: John Doe</h2>
-        <p>Cargo: Manager</p>
-        <button class="edit-button">Editar</button>
-        <button class="delete-button">Excluir</button>
-      </div>
-      <!-- Repeat the above card structure for each funcionario -->
-    </div>
-    <button class="add-button">Adicionar Funcionario</button>
-  </div>
-  <script src="funcionarios.js"></script>
-</body>
-
+	<body>
+		<div class="container">
+			<h1>Funcionarios</h1>
+			<div class="funcionarios-list"></div>
+			<button class="add-button">Adicionar Funcionario</button>
+		</div>
+		<script src="funcionarios.js"></script>
+	</body>
 </html>
