@@ -2,16 +2,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
 }
 
 .container {
-  max-width: 800px;
   margin: 20px auto;
-  padding: 20px;
+  padding-bottom: 20px;
   background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -19,9 +15,11 @@ h1 {
   margin-bottom: 20px;
 }
 
-.funcionarios-list{
-  overflow-y:auto;
-  height: 60vh;
+.funcionarios-list {
+  overflow-y: auto;
+  height: 70vh;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .funcionario-card {
@@ -37,7 +35,8 @@ h1 {
   margin: 0;
 }
 
-.add-button, .list-button {
+.add-button,
+.list-button {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
