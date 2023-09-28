@@ -1,124 +1,79 @@
-/* Estilos gerais */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0080ff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 150vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #242424;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  background-color: #444444;
+  border: 1px solid #000000;
+  border-radius: 5px;
 }
 
-/* Estilos para o formulário */
 h1 {
-    color: #ffffff; /* Azul */
-}
-h2 {
-    color: #ffffff; /* Azul */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+.enderecos-list {
+  overflow-y: auto;
+  height: 70vh;
+  width: 80vh;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-label {
-    margin-bottom: 5px;
-    color: #ffffff;
+.endereco-card {
+  background-color: #1d1d1d;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"],
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 20px; 
+.endereco-card h2 {
+  margin: 0;
 }
 
-button[type="submit"] {
-    background-color: #c0c0c0; 
-    color: #000000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
+.add-button,
+.list-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
-    color: #ffffff;
+.add-button:hover {
+  background-color: #0056b3;
 }
 
-/* área de mensagem */
-#mensagem {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #333;
-}
-
-/* Adicionar Localidade */
-.titulo {
-    
-    color: #ffffff; /* Cor do texto branca */
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    margin-bottom: 20px; /* Espaçamento inferior */
-}
-
-/* botões de CRUD */
-.crud-button {
+.edit-button,
+.delete-button {
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
-  margin: 5px;
+  margin-top: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.crud-button:hover {
-  background-color: #0056b3;
-}
-
-/* formulário de adição de localidades */
-.crud-form {
-  margin-top: 20px;
-}
-
-.crud-form input[type="text"] {
-  width: 200px;
-  padding: 5px;
-  margin-right: 10px;
-}
-
-/* mensagens de sucesso e erro */
-.crud-success-message {
-  color: green;
-  font-weight: bold;
-}
-
-.crud-error-message {
-  color: red;
-  font-weight: bold;
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #0056b3;
 }
