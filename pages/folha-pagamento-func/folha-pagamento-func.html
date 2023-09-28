@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Folha de Pagamento (funcionÃ¡rios)</title>
+		<link
+			rel="stylesheet"
+			href="folha-pagamento-func.css" />
 
-<head>
-  <title>Folha de Pagamento (funcionÃ¡rios)</title>
-  <link rel="stylesheet" href="folha-pagamento-func.css" />
+		<script
+			type="text/javascript"
+			src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+		<script
+			type="text/javascript"
+			type="text/javascript">
+			Parse.initialize(
+				"IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P",
+				"OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl"
+			);
+			Parse.serverURL = "https://parseapi.back4app.com/";
+		</script>
+	</head>
 
-  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-  <script type="text/javascript" type="text/javascript">
-    Parse.initialize(
-      "IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P",
-      "OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl"
-    );
-    Parse.serverURL = "https://parseapi.back4app.com/";
-  </script>
-</head>
-
-<body>
-  <div class="container">
-    <h1>Folhas de Pagamento</h1>
-    <div class="pagamentos-list"></div>
-    <select id="funcionarios-select"></select>
-    <button class="add-button">Adicionar Pagamento</button>
-  </div>
-  <script type="text/javascript" src="folha-pagamento-func.js"></script>
-</body>
-
+	<body>
+		<div class="container">
+			<h1>Folhas de Pagamento</h1>
+			<div class="pagamentos-list"></div>
+			<select id="funcionarios-select"></select>
+			<button class="add-button">Adicionar Pagamento</button>
+		</div>
+		<button
+			class="button__back"
+			onclick="location.href=`../../index.html`">
+			Voltar
+		</button>
+		<script
+			type="text/javascript"
+			src="folha-pagamento-func.js"></script>
+	</body>
 </html>

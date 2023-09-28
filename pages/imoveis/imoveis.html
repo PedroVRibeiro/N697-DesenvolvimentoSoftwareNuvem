@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Imóveis CRUD</title>
+		<script
+			type="text/javascript"
+			src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+		<script
+			type="text/javascript"
+			type="text/javascript">
+			Parse.initialize(
+				"IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P",
+				"OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl"
+			);
+			Parse.serverURL = "https://parseapi.back4app.com/";
+		</script>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imóveis CRUD</title>
-    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-    <script type="text/javascript" type="text/javascript">
-        Parse.initialize(
-            "IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P",
-            "OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl"
-        );
-        Parse.serverURL = "https://parseapi.back4app.com/";
-    </script>
+		<link
+			rel="stylesheet"
+			href="imoveis.css" />
+	</head>
 
-    <link rel="stylesheet" href="imoveis.css" />
-</head>
-
-<body class="imoveis">
-    <div class="imoveis-container">
-        <div class="imoveis-card">
-            <h1 class="imoveis-header">Imóveis Disponíveis</h1>
-            <section>
-                <div class="imoveis-list"></div>
-                <button class="imoveis-list__button--add">Adicionar imóvel</button>
-            </section>
-        </div>
-    </div>
-    <button class="imoveis-button__back" onclick="location.href=`../../index.html`">Voltar</button>
-    <script src="imoveis.js"></script>
-</body>
-
+	<body class="imoveis">
+		<div class="imoveis-container">
+			<div class="imoveis-card">
+				<h1 class="imoveis-header">Imóveis Disponíveis</h1>
+				<section>
+					<div class="imoveis-list"></div>
+					<button class="imoveis-list__button--add">
+						Adicionar imóvel
+					</button>
+				</section>
+			</div>
+		</div>
+		<button
+			class="imoveis-button__back"
+			onclick="location.href=`../../index.html`">
+			Voltar
+		</button>
+		<script src="imoveis.js"></script>
+	</body>
 </html>

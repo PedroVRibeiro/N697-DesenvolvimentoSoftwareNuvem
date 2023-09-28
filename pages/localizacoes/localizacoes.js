@@ -125,9 +125,9 @@ function renderEndereco(endereco) {
 	const card = document.createElement("div");
 	card.className = "endereco-card";
 	card.innerHTML = `
-            <h2>${endereco.get(`cidade`)} - ${endereco.get(`rua`)} ${endereco.get(
-		`numero`
-	)}, ${endereco.get(`bairro`)}</h2>
+            <h2>${endereco.get(`cidade`)} - ${endereco.get(
+		`rua`
+	)} ${endereco.get(`numero`)}, ${endereco.get(`bairro`)}</h2>
             <p>CEP: ${endereco.get(`cep`)}</p>
             <button class="edit-button" data-id="${endereco.id}">Editar</button>
             <button class="delete-button" data-id="${
