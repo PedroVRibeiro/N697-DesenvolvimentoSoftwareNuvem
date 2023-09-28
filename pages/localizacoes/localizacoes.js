@@ -88,11 +88,11 @@ async function editEndereco(objectId) {
 	try {
 		const object = await query.get(objectId);
 		console.log(object);
-		object.set(cidade, prompt("Editar cidade:", object.get(cidade)));
-		object.set(rua, prompt("Editar rua:", object.get(rua)));
-		object.set(numero, prompt("Editar numero:", object.get(numero)));
-		object.set(bairro, prompt("Editar bairro:", object.get(bairro)));
-		object.set(cep, prompt("Editar cep:", object.get(cep)));
+		object.set(`cidade`, prompt("Editar cidade:", object.get(`cidade`)));
+		object.set(`rua`, prompt("Editar rua:", object.get(`rua`)));
+		object.set(`numero`, prompt("Editar numero:", object.get(`numero`)));
+		object.set(`bairro`, prompt("Editar bairro:", object.get(`bairro`)));
+		object.set(`cep`, prompt("Editar cep:", object.get(`cep`)));
 		try {
 			const response = await object.save();
 		} catch (error) {
