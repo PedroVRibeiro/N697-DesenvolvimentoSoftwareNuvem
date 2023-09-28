@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Funcionarios CRUD</title>
+		<script
+			type="text/javascript"
+			src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+		<script
+			type="text/javascript"
+			type="text/javascript">
+			Parse.initialize(
+				"IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P",
+				"OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl"
+			);
+			Parse.serverURL = "https://parseapi.back4app.com/";
+		</script>
+
+		<link
+			rel="stylesheet"
+			href="funcionarios.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Funcionários</h1>
+			<div class="funcionarios-list"></div>
+			<button class="add-button">Adicionar Funcionário</button>
+		</div>
+		<script src="funcionarios.js"></script>
+	</body>
+</html>

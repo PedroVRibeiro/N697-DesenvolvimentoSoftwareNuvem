@@ -1,0 +1,23 @@
+{
+  "name": "n697-desenvolvimentosoftwarenuvem",
+  "version": "1.0.0",
+  "description": "Atividade em grupo da disciplina Desenvolvimento de Software em Nuvem, da Unifor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroVRibeiro/N697-DesenvolvimentoSoftwareNuvem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroVRibeiro/N697-DesenvolvimentoSoftwareNuvem/issues"
+  },
+  "homepage": "https://github.com/PedroVRibeiro/N697-DesenvolvimentoSoftwareNuvem#readme",
+  "dependencies": {
+    "parse": "^4.2.0"
+  }
+}
