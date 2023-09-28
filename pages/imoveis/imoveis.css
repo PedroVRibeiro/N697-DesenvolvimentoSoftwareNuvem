@@ -1,0 +1,117 @@
+.imoveis {
+  align-items: center;
+  background-color: #242424;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.imoveis-container {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.imoveis-card {
+  background-color: #444444;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.imoveis-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.imoveis-list {
+  height: 70vh;
+  overflow-y: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 80vh;
+}
+
+.imoveis-list__button--add {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.imoveis-list__button--add:hover {
+  background-color: #0056b3;
+}
+
+.imoveis-list__button:active {
+  position: relative;
+  top: 1px;
+}
+
+.imoveis-list__imovel {
+  background-color: #1d1d1d;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.imoveis-list__button--edit,
+.imoveis-list__button--delete {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.imoveis-list__button--edit:hover,
+.imoveis-list__button--delete:hover {
+  background-color: #0056b3;
+}
+
+.imoveis-button__back {
+  background-color: #2b3136;
+  border: 1px solid #657079;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.imoveis-button__back:hover {
+  background-color: #007bff;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #444444;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c5c5c5;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+}

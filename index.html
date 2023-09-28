@@ -5,7 +5,7 @@
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0" />
-		<title>Mobile App</title>
+		<title>Imobiliária E10</title>
 		<script
 			type="text/javascript"
 			src="https://npmcdn.com/parse/dist/parse.min.js"></script>
@@ -17,40 +17,60 @@
 			Parse.serverURL = "https://parseapi.back4app.com/";
 		</script>
 		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com" />
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@300;500&family=Bebas+Neue&display=swap"
+			rel="stylesheet" />
+		<link
 			rel="stylesheet"
 			href="styles.css" />
 	</head>
 
 	<body>
-		<button
-			class="button"
-			onclick="location.href=`pages/imoveis/imoveis.html`">
-			Imóveis
-		</button>
-		<button
-			class="button"
-			onclick="location.href=`pages/corretores-empresa/corretores-empresa.html`">
+		<div class="nav-bar">
+			<h1 class="nav-bar__title">Imobiliária E10</h1>
+			<span class="nav-bar__description"
+				>Sistema de administração e controle de imobiliária</span
+			>
+			<span class="nav-bar__time"
+				>UNIFOR | N697 - E10: Igor, Neto, Paulo, Pedro Figueiredo, Pedro
+				Ribeiro e Rhamanda</span
+			>
+		</div>
+		<div class="options">
+			<button
+				class="button"
+				onclick="location.href=`pages/imoveis/imoveis.html`">
+				Imóveis
+			</button>
+			<!-- <button class="button" onclick="location.href=`pages/corretores-empresa/corretores-empresa.html`">
 			Corretores da Empresa
-		</button>
-		<button
-			class="button"
-			onclick="location.href=`pages/funcionarios/funcionarios.html`">
-			Funcionários
-		</button>
-		<button
-			class="button"
-			onclick="location.href=`pages/dados-financeiros/dados-financeiros.html`">
-			Dados Financeiros
-		</button>
-		<button
-			class="button"
-			onclick="location.href=`pages/folha-pagamento-func/folha-pagamento-func.html`">
-			Folha de Pagamento (Funcionários)
-		</button>
-		<button
-			class="button"
-			onclick="location.href=`pages/localizacoes/localizacoes.html`">
-			Bairros/Cidades/Regiões (Localizações)
-		</button>
+		</button> -->
+			<button
+				class="button"
+				onclick="location.href=`pages/funcionarios/funcionarios.html`">
+				Funcionários
+			</button>
+			<button
+				class="button"
+				onclick="location.href=`pages/dados-financeiros/dados-financeiros.html`">
+				Dados Financeiros
+			</button>
+			<button
+				class="button"
+				onclick="location.href=`pages/folha-pagamento-func/folha-pagamento-func.html`">
+				Folha de Pagamento (Funcionários)
+			</button>
+			<button
+				class="button"
+				onclick="location.href=`pages/localizacoes/localizacoes.html`">
+				Bairros/Cidades/Regiões (Localizações)
+			</button>
+		</div>
 	</body>
 </html>

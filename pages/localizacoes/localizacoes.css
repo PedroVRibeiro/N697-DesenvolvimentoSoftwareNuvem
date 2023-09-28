@@ -75,5 +75,21 @@ h1 {
 
 .edit-button:hover,
 .delete-button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3;
+}
+
+.button__back {
+  background-color: #2b3136;
+  border: 1px solid #657079;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.button__back:hover {
+  background-color: #007bff;
 }
