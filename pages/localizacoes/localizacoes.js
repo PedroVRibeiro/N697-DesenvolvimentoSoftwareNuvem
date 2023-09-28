@@ -65,11 +65,11 @@ async function retrieveEnderecos() {
 		resultado.forEach((endereco) => {
 			enderecos.push({
 				objectId: endereco.id,
-				rua: endereco.get(rua),
-				numero: endereco.get(numero),
-				cep: endereco.get(cep),
-				bairro: endereco.get(bairro),
-				cidade: endereco.get(cidade),
+				rua: endereco.get(`rua`),
+				numero: endereco.get(`numero`),
+				cep: endereco.get(`cep`),
+				bairro: endereco.get(`bairro`),
+				cidade: endereco.get(`cidade`),
 			});
 			renderEndereco(endereco);
 		});
@@ -125,10 +125,10 @@ function renderEndereco(endereco) {
 	const card = document.createElement("div");
 	card.className = "endereco-card";
 	card.innerHTML = `
-            <h2>${endereco.get(cidade)} - ${endereco.get(rua)} ${endereco.get(
-		numero
-	)}, ${endereco.get(bairro)}</h2>
-            <p>CEP: ${endereco.get(cep)}</p>
+            <h2>${endereco.get(`cidade`)} - ${endereco.get(`rua`)} ${endereco.get(
+		`numero`
+	)}, ${endereco.get(`bairro`)}</h2>
+            <p>CEP: ${endereco.get(`cep`)}</p>
             <button class="edit-button" data-id="${endereco.id}">Editar</button>
             <button class="delete-button" data-id="${
 				endereco.id
