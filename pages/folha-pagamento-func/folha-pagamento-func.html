@@ -1,77 +1,123 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Folha de Pagamento dos Funcionários</title>
-  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-  <script type="text/javascript" type="text/javascript">
-    Parse.initialize("IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P", "OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl");
-    Parse.serverURL = 'https://parseapi.back4app.com/'
-  </script>
-</head>
-<body>
+	<head>
+		<title>Folha de Pagamento (funcionários)</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
 
-  <h1>Listagem da Folha de Pagamento dos Funcionários</h1>
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
 
-  <table border="1">
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Cargo</th>
-      <th>Salário</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>João</td>
-      <td>Gerente</td>
-      <td>R$ 5,000.00</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Maria</td>
-      <td>Desenvolvedor</td>
-      <td>R$ 4,000.00</td>
-    </tr>
-  </table>
+			th,
+			td {
+				padding: 10px;
+				border: 1px solid #ddd;
+				text-align: left;
+			}
 
-</body>
+			th {
+				background-color: #f2f2f2;
+			}
 
-//Saving your First Data Object on Back4App
-async function saveNewFuncionario() {
-  const funcionario = new Parse.Object("Funcionario");
+			tr:hover {
+				background-color: #f5f5f5;
+			}
+		</style>
+		<script>
+			let employees = [
+				{ id: 1, name: "João", role: "Gerente", salary: "R$ 5,000.00" },
+				{
+					id: 2,
+					name: "Maria",
+					role: "Desenvolvedor",
+					salary: "R$ 4,000.00",
+				},
+			];
 
-  funcionario.set("nome", "Pedro Ernesto Figueiredo");
-  funcionario.set("cargo", "Corretor");
-  try {
-    let result = await funcionario.save()
-    alert('New object created with objectId: ' + result.id);
-  } catch (error) {
-    alert('Failed to create new object, with error code: ' + error.message);
-  }
-}
+			function displayEmployees() {
+				const table = document.getElementById("employeeTable");
+				table.innerHTML = "";
+				employees.forEach((employee) => {
+					const row = table.insertRow();
+					row.insertCell(0).innerText = employee.id;
+					row.insertCell(1).innerText = employee.name;
+					row.insertCell(2).innerText = employee.role;
+					row.insertCell(3).innerText = employee.salary;
+					const deleteBtn = document.createElement("button");
+					deleteBtn.innerText = "Delete";
+					deleteBtn.onclick = function () {
+						employees = employees.filter(
+							(e) => e.id !== employee.id
+						);
+						displayEmployees();
+					};
+					row.insertCell(4).appendChild(deleteBtn);
+				});
+			}
 
-//Reading your First Data Object from Back4App
-async function retrieveFirstFuncionario() {
-  const query = new Parse.Query("Funcionario");
+			function addEmployee() {
+				const name = document.getElementById("name").value;
+				const role = document.getElementById("role").value;
+				const salary = document.getElementById("salary").value;
+				const id = employees.length + 1;
+				employees.push({ id, name, role, salary });
+				displayEmployees();
+			}
 
-  try {
-    const funcionario = await query.get("7q5WZA6XVu");
-    const nome = funcionario.get("nome");
-    const cargo = funcionario.get("cargo");
+			window.onload = displayEmployees;
+		</script>
+		<script
+			type="text/javascript"
+			src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+		<script
+			type="text/javascript"
+			type="text/javascript">
+			Parse.initialize(
+				"IXkKfuGYK6z4bcOrN4kmlm4OZ5ybfaOpY6rtKa9P",
+				"OTe1uGNezLiyWgFDsmQ47oFtFKyKFMPDAilWGFzl"
+			);
+			Parse.serverURL = "https://parseapi.back4app.com/";
+		</script>
+	</head>
 
-    alert(`Nome: ${nome} Cargo: ${cargo}`);
-  } catch (error) {
-    alert(`Failed to retrieve the object, with error code: ${error.message}`);
-  }
-}
+	<body>
+		<h1>CRUD da Folha de Funcionários</h1>
 
-document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".button");
+		<div>
+			<label
+				>Nome:
+				<input
+					type="text"
+					id="name"
+			/></label>
+			<label
+				>Cargo:
+				<input
+					type="text"
+					id="role"
+			/></label>
+			<label
+				>Salário:
+				<input
+					type="text"
+					id="salary"
+			/></label>
+			<button onclick="addEmployee()">Adicionar</button>
+		</div>
 
-    buttons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            saveNewFuncionario()
-            retrieveFirstFuncionario()
-        });
-    });
-});
+		<table id="employeeTable">
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Cargo</th>
+				<th>Salário</th>
+				<th>Ação</th>
+			</tr>
+		</table>
+	</body>
 </html>
